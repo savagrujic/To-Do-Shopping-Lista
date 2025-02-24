@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>To-Do Lista</title>
+</head>
+<body>
+    <h1>Napiši svoju šoping listu</h1>
+    <input type="text" class="textvalue">
+    <button onclick="DodajInputBox()">Submit</button>
+    <div class="listabox"></div>
+</body>
+<script>
+    function DodajInputBox() {
+       let textvalue = document.querySelector(".textvalue").value
+       
+
+       if(textvalue == "") {
+       
+        alert("U need to have text")
+       }
+       else {
+      
+        const main = document.querySelector(".listabox")
+        
+        const InputDiv = document.createElement("div")
+        const InputBox = document.createElement("p")
+        const button = document.createElement("button")
+        InputBox.style.color = "#aeea94"
+        InputBox.style.fontWeight = "bold"
+        button.textContent = "Obrisi"
+        InputBox.textContent = textvalue
+        InputDiv.appendChild(InputBox)
+        InputDiv.appendChild(button)
+        button.addEventListener("click", () => {
+            main.removeChild(InputDiv)
+        })
+        button.style.marginLeft = "60px"
+        button.style.marginBottom="20px"
+      
+        InputDiv.style.display = "flex"
+        InputDiv.style.alignItems = "center"
+        InputDiv.style.justifyContent = "space-between"
+          InputDiv.style.flexDirection="row"
+        main.appendChild(InputDiv)
+    }
+        
+
+    }
+</script>
+</html>
