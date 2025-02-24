@@ -14,6 +14,7 @@
 </body>
 <script>
     function DodajInputBox() {
+       
        let textvalue = document.querySelector(".textvalue").value
        
 
@@ -22,9 +23,9 @@
         alert("U need to have text")
        }
        else {
-      
+        let cleartext = document.querySelector(".textvalue").value = ""
         const main = document.querySelector(".listabox")
-        
+        main.style.display = "block"
         const InputDiv = document.createElement("div")
         const InputBox = document.createElement("p")
         const button = document.createElement("button")
